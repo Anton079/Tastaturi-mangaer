@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tastaturi-mangaer", "Tastaturi-mangaer\Tastaturi-mangaer.csproj", "{D128DB4B-E46B-43AF-A705-40BBC285D162}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D128DB4B-E46B-43AF-A705-40BBC285D162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D128DB4B-E46B-43AF-A705-40BBC285D162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D128DB4B-E46B-43AF-A705-40BBC285D162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D128DB4B-E46B-43AF-A705-40BBC285D162}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B18CFB3-150A-4646-B2A1-729661A8A0EE}
+	EndGlobalSection
+EndGlobal
