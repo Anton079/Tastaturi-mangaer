@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Tastaturi_mangaer;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        UserService userService = new UserService();
+
+        userService.AfisareUser();
+    }
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,17 +19,72 @@ namespace Tastaturi_mangaer
 
         public void LoadData()
         {
-            User User1 = new User("1", "adndreea@gmail.com", "fewgfweg", 07457541);
-            User User2 = new User("2", "ana@gmail.com", "yun", 074124912);
-            User User3 = new User("3", "bogdan@gmail.com", "gtrhr", 07452352);
-            User User4 = new User("4", "ionut@gmail.com", "fwefw", 07453252);
-            User User5 = new User("5", "horia@gmail.com", "liulfngfn", 0746546542);
+            try
+            {
+                using(StreamReader sr = new StreamReader(this.GetFilePath()))
+                {
+                    string line = "";
+                    while((line = sr.ReadLine()) != null)
+                    {
+                        User user = new User(line);
+                        this._UserS.Add(user);
+                    }
+                }
+                
 
-            this._UserS.Add(User1);
-            this._UserS.Add(User2);
-            this._UserS.Add(User3);
-            this._UserS.Add(User4);
-            this._UserS.Add(User5);
+                
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private String GetFilePath()
+        {
+            string currentDicrectory = Directory.GetCurrentDirectory();
+
+            string folder = Path.Combine(currentDicrectory, "data");
+
+            string file = Path.Combine(folder, "users");
+
+            return file;
+        }
+
+        public string ToSaveAll()
+        {
+            String save = "";
+
+            for (int i = 0; i < _UserS.Count - 1; i++)
+            {
+                save += _UserS[i].ToSave() + "\n";
+            }
+
+            save += _UserS[_UserS.Count - 1].ToSave();
+
+            return save;
+        }
+
+
+        public void SaveData()
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(this.GetFilePath()))
+                {
+                    sw.Write(ToSaveAll());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public void GenerateNr()
+        {
+            Random rnd = new Random();
+
+            int randomNumber = rnd.Next(1, 10000000);
         }
 
         public void AfisareUser()
