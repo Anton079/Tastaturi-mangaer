@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tastaturi_mangaer
 {
-    internal class View
+    public class View
     {
+        private User _user;
+        private TastaturiService _tastaturiService;
+        private InchiriereService _inchiriereService;
     }
 }

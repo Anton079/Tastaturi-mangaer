@@ -22,33 +22,33 @@ namespace Tastaturi_mangaer
             this._password = token[2];
             this._phone = int.Parse(token[3]);
         }
-        public User(int Id, string Email, string Password, int Phone)
+        public User(int id, string email, string password, int phone)
         {
-            Id = id;
-            Email = email;
-            Password = password;
-            Phone = phone;
+            _id = id;
+            _email = email;
+            _password = password;
+            _phone = phone;
         }
 
-        public int id
+        public int Id
         {
             get { return _id; }
             set { _id = value; }
         }
 
-        public string email
+        public string Email
         {
             get { return _email; }
             set { _email = value; }
         }
 
-        public string password
+        public string Password
         {
             get { return _password; }
             set { _password = value; }
         }
 
-        public int phone
+        public int Phone
         {
             get { return _phone; }
 
@@ -57,10 +57,10 @@ namespace Tastaturi_mangaer
         public string UserInfo()
         {
             string text = " ";
-            text += "Id " + id + "\n";
-            text += "Email " + email + "\n";
-            text += "Password " + email + "\n";
-            text += "Phone " + phone + "\n";
+            text += "Id " + Id + "\n";
+            text += "Email " + Email + "\n";
+            text += "Password " + Email + "\n";
+            text += "Phone " + Phone + "\n";
             return text;
         }
 

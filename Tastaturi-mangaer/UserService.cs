@@ -39,7 +39,7 @@ namespace Tastaturi_mangaer
             }
         }
 
-        private String GetFilePath()
+        public String GetFilePath()
         {
             string currentDicrectory = Directory.GetCurrentDirectory();
 
@@ -93,6 +93,28 @@ namespace Tastaturi_mangaer
             {
                 Console.WriteLine(x.UserInfo());
             }
+        }
+
+        public int FindUserById(int id)
+        {
+            foreach(User x in _UserS)
+            {
+                if(x.Id == id)
+                {
+                    return id;
+                }
+            }
+            return -1;
+        }
+
+        public bool AddUser(User user)
+        {
+            if(FindUserById(user.Id) == -1)
+            {
+                this._UserS.Add(user);
+                return true;
+            }
+            return false;
         }
     }
 }
